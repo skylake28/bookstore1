@@ -15,18 +15,21 @@
 </head>
 <body>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Shopping Cart</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div>
+            <div class="container">
+              <div class="row pt-5">
+                <div class="col-12 d-flex">
                 <ul id="show-cart">
                     <li>?????</li>
                 </ul>
+                </div></div>
                 <div>You have <span id="count-cart">x</span> items in your cart</div>
                 <div>Total: ₱<span id="total-cart"></span></div>
             </div>
@@ -34,7 +37,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">CheckOut</button>
+          <button type="button" class="btn btn-primary">Continue Check out</button>
         </div>
       </div>
     </div>
@@ -263,7 +266,7 @@ function displayCart() {
     var cartArray = shoppingCart.listCart();
     console.log(cartArray);
     var output = "";
-    for(var i in cartArray)output += "<li>" + cartArray[i].name + " <input class='item-count' type='number' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "' >" + " x " + cartArray[i].price + " = " + cartArray[i].total + " <button class='btn plus-item' data-name='" + cartArray[i].name + "'>+</button>" + " <button class='btn subtract-item' data-name='" + cartArray[i].name + "'>-</button>" + " <button class='btn delete-item' data-name='" + cartArray[i].name + "'>remove</button>" + "</li>";
+    for(var i in cartArray)output += "<li>" + cartArray[i].name + " <input class='item-count' type='number' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "' >" + " x " + cartArray[i].price + " = " + cartArray[i].total + " <button class='btn btn-success plus-item' data-name='" + cartArray[i].name + "'>+</button>" + " <button class='btn subtract-item btn-danger' data-name='" + cartArray[i].name + "'>-</button>" + " <button class='btn delete-item btn-warning' data-name='" + cartArray[i].name + "'>remove</button>" + "</li>";
     $("#show-cart").html(output);
     $("#count-cart").html(shoppingCart.countCart());
     $("#total-cart").html(shoppingCart.totalCart());

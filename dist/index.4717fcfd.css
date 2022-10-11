@@ -14183,6 +14183,19 @@ textarea.form-control-lg {
   background-color: #fff;
 }
 
+.item-count {
+  width: 50px;
+}
+
+#show-cart li {
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  list-style-type: none;
+}
+
 .f-w-7 {
   width: 1.75rem;
 }
